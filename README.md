@@ -82,5 +82,5 @@ If the script fails due to uncommitted changes, run git status to see what's pen
    - Pre-Push Check Failures:
 If any pre-push check fails, address the specific issue (e.g., fixing failing tests or resolving lint errors) and try again.
 
-Contributing
+## Contributing
 Contributions to enhance GitSentry are welcome! Feel free to fork the repository, make improvements, and submit a pull request.
