@@ -1,13 +1,11 @@
 #!/bin/bash
 
-# Enhanced Git Automation Script with Advanced Features
-
 # Colors
 RED='\033[0;31m'
 GREEN='\033[0;32m'
 YELLOW='\033[0;33m'
 BLUE='\033[0;34m'
-NC='\033[0m' # No Color
+NC='\033[0m'
 
 # Log actions
 log_file="gitpush.log"
@@ -42,12 +40,10 @@ function confirm_protected_branch_push {
     esac
 }
 
-# Main logic
 function main {
     print_color $BLUE "Script started..."
     log_action "Script execution started."
 
-    # Detect the current branch and remote
     CURRENT_BRANCH=$(git rev-parse --abbrev-ref HEAD)
     DEFAULT_REMOTE=$(git remote | head -n 1)
 
@@ -58,7 +54,6 @@ function main {
         confirm_protected_branch_push $CURRENT_BRANCH
     fi
 
-    # Optional: Run pre-push custom scripts or commands
     if ! ./run_pre_push_checks.sh; then
         print_color $RED "Pre-push checks failed."
         exit 1
@@ -67,11 +62,9 @@ function main {
     print_color $GREEN "Pre-push checks passed."
     log_action "Pre-push checks passed."
 
-    # Add changes
     git add -A
     log_action "Added all changes."
 
-    # Commit changes
     echo -n "Enter commit message: "
     read COMMIT_MSG
     if git commit -m "$COMMIT_MSG"; then
@@ -82,10 +75,8 @@ function main {
         exit 1
     fi
 
-    # Backup before pushing
     backup_branch
 
-    # Push changes
     if git push $DEFAULT_REMOTE $CURRENT_BRANCH; then
         print_color $GREEN "Changes pushed successfully to $CURRENT_BRANCH on remote $DEFAULT_REMOTE."
         log_action "Changes pushed to $CURRENT_BRANCH on $DEFAULT_REMOTE."
