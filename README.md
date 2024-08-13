@@ -30,16 +30,18 @@ GitSentry is an advanced Git automation script designed to streamline and safegu
    Configure Git to handle line endings appropriately based on your operating system:
 
 - Windows:
+
    ```bash
    Copy code
    git config --global core.autocrlf true
    ```
 - Linux/Mac:
+
    ``` bash
    Copy code
    git config --global core.autocrlf input
    ```
-   ## Usage
+## Usage
 
 1.**Run GitSentry**:
    In your project's root directory, execute the gitpush.sh script:
