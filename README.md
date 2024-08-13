@@ -32,13 +32,11 @@ GitSentry is an advanced Git automation script designed to streamline and safegu
 - Windows:
 
    ```bash
-   Copy code
    git config --global core.autocrlf true
    ```
 - Linux/Mac:
 
    ``` bash
-   Copy code
    git config --global core.autocrlf input
    ```
 ## Usage
