@@ -43,7 +43,7 @@ GitSentry is an advanced Git automation script designed to streamline and safegu
    ```
 ## Usage
 
-1.**Run GitSentry**:
+1. **Run GitSentry**:
    In your project's root directory, execute the gitpush.sh script:
    ```bash
    ./gitpush.sh
@@ -58,7 +58,7 @@ GitSentry is an advanced Git automation script designed to streamline and safegu
    - Create a backup branch.
    - Push changes to the remote repository.
 
-2.**Pre-Push Checks**:
+2. **Pre-Push Checks**:
    The 'run_pre_push_checks.sh' script runs automatically during the process to ensure that:
 
    - There are no uncommitted changes.
